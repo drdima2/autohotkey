@@ -16,9 +16,17 @@
 ; ======== DO NOT RUN VLC and AIMP SIMULTANEOUSLY
 ;
 
-PrintScreen::Send ^+v   ;PrintScreen -> CTRL+ALT+V ;back/prev
-ScrollLock::Send ^+x    ;ScrollLock  -> CTRL+ALT+X ;play/pause
-Pause::Send ^+b         ;Pause       -> CTRL+ALT+B ;forward/next
+PrintScreen::
+    Send ^+v            ;PrintScreen -> CTRL+ALT+V ;back/prev
+    youtubeSeekBack()
+
+ScrollLock::
+    Send ^+x            ;ScrollLock  -> CTRL+ALT+X ;play/pause
+    youtubePlay()
+
+Pause::
+    Send ^+b            ;Pause       -> CTRL+ALT+B ;forward/next
+    youtubeSeekForward()
 
 ; double tap left shift do volume down
 ~Lshift::
@@ -55,6 +63,107 @@ $Esc::
 		Send {Volume_Mute}
 	}
 	return
+
+; -------------------------------------------
+; new feature Youtube play/stop
+
+
+
+
+
+#IfWinNotActive, ahk_exe chrome.exe
+
+youtubePlay(){
+; MsgBox Youtube
+#Persistent
+#NoEnv
+#SingleInstance, Force
+DetectHiddenWindows, On
+SetWorkingDir %A_ScriptDir%
+SetTitleMatchMode, 2
+controlID 		:= 0
+;return
+
+
+    ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
+   	ControlFocus,,ahk_id %controlID%
+
+    	IfWinExist, YouTube
+    	{
+    		ControlSend, Chrome_RenderWidgetHostHWND1, k , Google Chrome
+    		return
+    	}
+    	Loop {
+    		IfWinExist, YouTube
+    			break
+    		ControlSend, , ^{PgUp} , Google Chrome
+    		sleep 150
+    	}
+    	ControlSend, , k , Google Chrome
+    return
+}
+
+
+youtubeSeekBack(){
+
+    #Persistent
+    #NoEnv
+    #SingleInstance, Force
+    DetectHiddenWindows, On
+    SetWorkingDir %A_ScriptDir%
+    SetTitleMatchMode, 2
+    controlID 		:= 0
+
+    ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
+
+    	ControlFocus,,ahk_id %controlID%
+
+    	IfWinExist, YouTube
+    	{
+    		ControlSend, Chrome_RenderWidgetHostHWND1, j , Google Chrome
+    		return
+    	}
+    	Loop {
+    		IfWinExist, YouTube
+    			break
+
+    		ControlSend, , ^{PgUp} , Google Chrome
+    		sleep 150
+    	}
+    	ControlSend, , j , Google Chrome
+    return
+}
+
+youtubeSeekForward(){
+
+    #Persistent
+    #NoEnv
+    #SingleInstance, Force
+    DetectHiddenWindows, On
+    SetWorkingDir %A_ScriptDir%
+    SetTitleMatchMode, 2
+    controlID 		:= 0
+
+  ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
+
+  	ControlFocus,,ahk_id %controlID%
+
+  	IfWinExist, YouTube
+  	{
+  		ControlSend, Chrome_RenderWidgetHostHWND1, l , Google Chrome
+  		return
+  	}
+  	Loop {
+  		IfWinExist, YouTube
+  			break
+
+  		ControlSend, , ^{PgUp} , Google Chrome
+  		sleep 150
+  	}
+  	ControlSend, , +l , Google Chrome
+  return
+
+}
 
 
 
