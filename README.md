@@ -23,7 +23,7 @@ search for "Play/Pause" and set it in Global column to CTRL+SHIFT+x <br />
 search for "Very short backwards jump" and set it in Global column to CTRL+SHIFT+v <br />
 search for "Very short forward jump" and set it in Global column to CTRL+SHIFT+b <br />
 <br />
-## AIMP Setup <br />
+## AIMP Setup 
 I personally use VLC only for audio/mp3/radio <br />
 AIMP -> CTRL + P -> Hotkeys (left menu) <br />
 Search for "Play/Pause" and set it in Global 1 column to SHIFT+CTRL+X <br />
@@ -32,10 +32,10 @@ Search for "Next track" and set it in Global 1 column to SHIFT+CTRL+B <br />
 <br />
 <br />
 <br />
-### DO NOT RUN VLC and AIMP SIMULTANEOUSLY <br />
+### DO NOT RUN VLC and AIMP SIMULTANEOUSLY
 <br />
-<br />
-## Any Other Player Setup <br /> 
+ 
+## Any Other Player Setup 
 Almost every popular media player has a hotkeys <br />
 Usually you can add/change hotkeys. <br />
 Set hot keys as global keys, that it can control your player from any window <br /> 
@@ -45,5 +45,6 @@ Set prev functionality to global key CTRL+SHIFT+v <br />
 Set next functionality to global key CTRL+SHIFT+b <br />
 <br />
 <br />
-## Windows autorun on startup <br />
+
+## Windows autorun on startup
 create a shortcut to autohotkey.bat, and move to startup folder in start menu <br />
