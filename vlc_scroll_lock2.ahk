@@ -23,7 +23,7 @@ Pause::Send ^+b         ;Pause       -> CTRL+ALT+B ;forward/next
 ; double tap left shift do volume down
 ~Lshift::
 	KeyWait,Lshift
-	KeyWait,Lshift,D T0.1
+	KeyWait,Lshift,D T0.2
 	If ErrorLevel {
 		Send +
 	} else {
@@ -34,7 +34,7 @@ Pause::Send ^+b         ;Pause       -> CTRL+ALT+B ;forward/next
 ; double tap right shift do volume up
 ~Rshift::
     KeyWait,Rshift
-	KeyWait,Rshift,D T0.1
+	KeyWait,Rshift,D T0.2
 	If ErrorLevel {
 		Send +
 	} else {
