@@ -17,16 +17,25 @@
 ;
 
 PrintScreen::
-    Send ^+v            ;PrintScreen -> CTRL+ALT+V ;back/prev
-    youtubeSeekBack()
+    Send ^+v        ;PrintScreen -> CTRL+SHIFT+V ;back/prev
+    ;youtubeSeekBack()
+    return
+
+
 
 ScrollLock::
-    Send ^+x            ;ScrollLock  -> CTRL+ALT+X ;play/pause
-    youtubePlay()
+    Send ^+x        ;ScrollLock  -> CTRL+SHIFT+X ;play/pause
+    ;youtubePlay()
+    return
+
+
 
 Pause::
-    Send ^+b            ;Pause       -> CTRL+ALT+B ;forward/next
-    youtubeSeekForward()
+    Send ^+b        ;Pause       -> CTRL+SHIFT+B ;forward/next
+    ;youtubeSeekForward()
+    return
+
+
 
 ; double tap left shift do volume down
 ~Lshift::
@@ -71,102 +80,96 @@ $Esc::
 
 
 
-#IfWinNotActive, ahk_exe chrome.exe
+;#IfWinNotActive, ahk_exe chrome.exe
 
-youtubePlay(){
+;youtubePlay(){
 ; MsgBox Youtube
-#Persistent
-#NoEnv
-#SingleInstance, Force
-DetectHiddenWindows, On
-SetWorkingDir %A_ScriptDir%
-SetTitleMatchMode, 2
-controlID 		:= 0
+;#Persistent
+;#NoEnv
+;#SingleInstance, Force
+;DetectHiddenWindows, On
+;SetWorkingDir %A_ScriptDir%
+;SetTitleMatchMode, 2
+;controlID 		:= 0
 ;return
 
 
-    ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
-   	ControlFocus,,ahk_id %controlID%
-
-    	IfWinExist, YouTube
-    	{
-    		ControlSend, Chrome_RenderWidgetHostHWND1, k , Google Chrome
-    		return
-    	}
-    	Loop {
-    		IfWinExist, YouTube
-    			break
-    		ControlSend, , ^{PgUp} , Google Chrome
-    		sleep 150
-    	}
-    	ControlSend, , k , Google Chrome
-    return
-}
-
-
-youtubeSeekBack(){
-
-    #Persistent
-    #NoEnv
-    #SingleInstance, Force
-    DetectHiddenWindows, On
-    SetWorkingDir %A_ScriptDir%
-    SetTitleMatchMode, 2
-    controlID 		:= 0
-
-    ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
-
-    	ControlFocus,,ahk_id %controlID%
-
-    	IfWinExist, YouTube
-    	{
-    		ControlSend, Chrome_RenderWidgetHostHWND1, j , Google Chrome
-    		return
-    	}
-    	Loop {
-    		IfWinExist, YouTube
-    			break
-
-    		ControlSend, , ^{PgUp} , Google Chrome
-    		sleep 150
-    	}
-    	ControlSend, , j , Google Chrome
-    return
-}
-
-youtubeSeekForward(){
-
-    #Persistent
-    #NoEnv
-    #SingleInstance, Force
-    DetectHiddenWindows, On
-    SetWorkingDir %A_ScriptDir%
-    SetTitleMatchMode, 2
-    controlID 		:= 0
-
-  ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
-
-  	ControlFocus,,ahk_id %controlID%
-
-  	IfWinExist, YouTube
-  	{
-  		ControlSend, Chrome_RenderWidgetHostHWND1, l , Google Chrome
-  		return
-  	}
-  	Loop {
-  		IfWinExist, YouTube
-  			break
-
-  		ControlSend, , ^{PgUp} , Google Chrome
-  		sleep 150
-  	}
-  	ControlSend, , +l , Google Chrome
-  return
-
-}
-
-
-
-
-
-
+;    ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
+;   	ControlFocus,,ahk_id %controlID%
+;
+;    	IfWinExist, YouTube
+;    	{
+;    		ControlSend, Chrome_RenderWidgetHostHWND1, k , Google Chrome
+;    		return
+;    	}
+;    	Loop {
+;    		IfWinExist, YouTube
+;    			break
+;    		ControlSend, , ^{PgUp} , Google Chrome
+;    		sleep 150
+;    	}
+;    	ControlSend, , k , Google Chrome
+;    return
+;}
+;
+;
+;youtubeSeekBack(){
+;
+;    #Persistent
+;    #NoEnv
+;    #SingleInstance, Force
+;    DetectHiddenWindows, On
+;    SetWorkingDir %A_ScriptDir%
+;    SetTitleMatchMode, 2
+;    controlID 		:= 0
+;
+;    ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
+;
+;    	ControlFocus,,ahk_id %controlID%
+;
+;    	IfWinExist, YouTube
+;    	{
+;    		ControlSend, Chrome_RenderWidgetHostHWND1, j , Google Chrome
+;    		return
+;    	}
+;    	Loop {
+;    		IfWinExist, YouTube
+;    			break
+;
+;    		ControlSend, , ^{PgUp} , Google Chrome
+;    		sleep 150
+;    	}
+;    	ControlSend, , j , Google Chrome
+;    return
+;}
+;
+;youtubeSeekForward(){
+;
+;    #Persistent
+;    #NoEnv
+;    #SingleInstance, Force
+;    DetectHiddenWindows, On
+;    SetWorkingDir %A_ScriptDir%
+;    SetTitleMatchMode, 2
+;    controlID 		:= 0
+;
+;  ControlGet, controlID, Hwnd,,Chrome_RenderWidgetHostHWND1, Google Chrome
+;
+;  	ControlFocus,,ahk_id %controlID%
+;
+;  	IfWinExist, YouTube
+;  	{
+;  		ControlSend, Chrome_RenderWidgetHostHWND1, l , Google Chrome
+;  		return
+;  	}
+;  	Loop {
+;  		IfWinExist, YouTube
+;  			break
+;
+;  		ControlSend, , ^{PgUp} , Google Chrome
+;  		sleep 150
+;  	}
+;  	ControlSend, , +l , Google Chrome
+;  return
+;
+;}
