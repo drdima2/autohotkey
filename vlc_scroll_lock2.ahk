@@ -3,35 +3,35 @@
 ; ============= VLC Setup ====================
 ; I personally use VLC only for video
 ; VLC -> Tools -> Preferences -> HotKeys
-; search for "Play/Pause" and set it in Global column to CTRL+SHIFT+x
-; search for "Very short backwards jump" and set it in Global column to CTRL+SHIFT+v
-; search for "Very short forward jump" and set it in Global column to CTRL+SHIFT+b
+; search for "Play/Pause" and set it in Global column to CTRL+SHIFT+ALT+F2
+; search for "Very short backwards jump" and set it in Global column to CTRL+SHIFT+ALT+F1
+; search for "Very short forward jump" and set it in Global column to CTRL+SHIFT+ALT+F3
 ;
 ; ============ AIMP Setup =====================
 ; AIMP -> CTRL + P -> Hotkeys (left menu)
-; Search for "Play/Pause" and set it in Global 1 column to SHIFT+CTRL+X
-; Search for "Previous track" and set it in Global 1 column to SHIFT+CTRL+V
-; Search for "Next track" and set it in Global 1 column to SHIFT+CTRL+B
+; Search for "Play/Pause" and set it in Global 1 column to SHIFT+CTRL+ALT+F2
+; Search for "Previous track" and set it in Global 1 column to SHIFT+CTRL+ALT+F1
+; Search for "Next track" and set it in Global 1 column to SHIFT+CTRL+ALT+F3
 ;
 ; ======== DO NOT RUN VLC and AIMP SIMULTANEOUSLY
 ;
 
 PrintScreen::
-    Send ^+v        ;PrintScreen -> CTRL+SHIFT+V ;back/prev
+    Send ^+!{F1}        ;PrintScreen -> CTRL+SHIFT+ALT+F1 ;back/prev
     ;youtubeSeekBack()
     return
 
 
 
 ScrollLock::
-    Send ^+x        ;ScrollLock  -> CTRL+SHIFT+X ;play/pause
+    Send ^+!{F2}        ;ScrollLock  -> CTRL+SHIFT+ALT+F2 ;play/pause
     ;youtubePlay()
     return
 
 
 
 Pause::
-    Send ^+b        ;Pause       -> CTRL+SHIFT+B ;forward/next
+    Send ^+!{F3}        ;Pause       -> CTRL+SHIFT+ALT+F3 ;forward/next
     ;youtubeSeekForward()
     return
 
