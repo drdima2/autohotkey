@@ -74,6 +74,24 @@ $Esc::
 	return
 
 ; -------------------------------------------
+; smart clipboard
+; CTRL +V   ->  Win+V
+!v::
+    ;Send {<# + v}
+    Send {LWin Down}v{LWin Up}
+    return
+
+
+
+
+
+
+
+
+
+
+
+
 ; new feature Youtube play/stop
 
 
