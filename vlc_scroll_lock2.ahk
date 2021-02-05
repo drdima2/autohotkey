@@ -16,22 +16,57 @@
 ; ======== DO NOT RUN VLC and AIMP SIMULTANEOUSLY
 ;
 
+mode := "AIMP"
+; ~RCtrl+ScrollLock::
+;^ScrollLock::
+^SC046::
+    ; MsgBox  % mode
+    if (mode = "AIMP"){
+        mode := "VLC"
+    }
+    else {
+        mode := "AIMP"
+    }
+    ;if (mode = ""){
+    ;    mode := "AIMP"
+    ;}
+    return
+
+
 PrintScreen::
-    Send ^+!{F1}        ;PrintScreen -> CTRL+SHIFT+ALT+F1 ;back/prev
+    if (mode = "AIMP"){
+        Send ^+!{F1}        ;PrintScreen -> CTRL+SHIFT+ALT+F1 ;back/prev
+    }
+    if (mode = "VLC"){
+            Send ^+!{F4}        ;PrintScreen -> CTRL+SHIFT+ALT+F4 ;back/prev
+    }
     ;youtubeSeekBack()
     return
 
 
 
-ScrollLock::
-    Send ^+!{F2}        ;ScrollLock  -> CTRL+SHIFT+ALT+F2 ;play/pause
+;ScrollLock::
+SC046::
+    if (mode = "AIMP") {
+        Send ^+!{F2}        ;ScrollLock  -> CTRL+SHIFT+ALT+F2 ;play/pause
+    }
+    if (mode = "VLC") {
+        Send ^+!{F5}        ;ScrollLock  -> CTRL+SHIFT+ALT+F2 ;play/pause
+    }
     ;youtubePlay()
     return
 
 
 
+
+
 Pause::
-    Send ^+!{F3}        ;Pause       -> CTRL+SHIFT+ALT+F3 ;forward/next
+    if (mode = "AIMP") {
+        Send ^+!{F3}        ;Pause       -> CTRL+SHIFT+ALT+F3 ;forward/next
+    }
+    if (mode = "VLC") {
+       Send ^+!{F6}        ;Pause       -> CTRL+SHIFT+ALT+F3 ;forward/next
+    }
     ;youtubeSeekForward()
     return
 
