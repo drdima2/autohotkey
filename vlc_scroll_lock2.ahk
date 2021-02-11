@@ -79,7 +79,7 @@ Pause::
 	If ErrorLevel {
 		Send +
 	} else {
-		Send {Volume_Down 5}
+		Send {Volume_Down 1}
 	}
 	return
 
@@ -90,7 +90,7 @@ Pause::
 	If ErrorLevel {
 		Send +
 	} else {
-		Send {Volume_Up 5}
+		Send {Volume_Up 1}
 	}
 	return
 
