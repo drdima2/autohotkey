@@ -51,7 +51,7 @@ SC046::
         Send ^+!{F2}        ;ScrollLock  -> CTRL+SHIFT+ALT+F2 ;play/pause
     }
     if (mode = "VLC") {
-        Send ^+!{F5}        ;ScrollLock  -> CTRL+SHIFT+ALT+F2 ;play/pause
+        Send ^+!{F5}        ;ScrollLock  -> CTRL+SHIFT+ALT+F5 ;play/pause
     }
     ;youtubePlay()
     return
@@ -65,7 +65,7 @@ Pause::
         Send ^+!{F3}        ;Pause       -> CTRL+SHIFT+ALT+F3 ;forward/next
     }
     if (mode = "VLC") {
-       Send ^+!{F6}        ;Pause       -> CTRL+SHIFT+ALT+F3 ;forward/next
+       Send ^+!{F6}        ;Pause       -> CTRL+SHIFT+ALT+F6 ;forward/next
     }
     ;youtubeSeekForward()
     return

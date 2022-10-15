@@ -19,16 +19,16 @@ Set VLC Player to listen for global keys
 ## VLC Setup 
 I personally use VLC only for video <br />
 VLC -> Tools -> Preferences -> HotKeys <br />
-search for "Play/Pause" and set it in Global column to CTRL+SHIFT+x <br />
-search for "Very short backwards jump" and set it in Global column to CTRL+SHIFT+v <br />
-search for "Very short forward jump" and set it in Global column to CTRL+SHIFT+b <br />
+search for "Play/Pause" and set it in Global column to CTRL+SHIFT+ALT+F5 <br />
+search for "Very short backwards jump" and set it in Global column to CTRL+SHIFT+ALT+F4 <br />
+search for "Very short forward jump" and set it in Global column to CTRL+SHIFT+ALT+F6 <br />
 <br />
 ## AIMP Setup 
 I personally use VLC only for audio/mp3/radio <br />
 AIMP -> CTRL + P -> Hotkeys (left menu) <br />
-Search for "Play/Pause" and set it in Global 1 column to SHIFT+CTRL+X <br />
-Search for "Previous track" and set it in Global 1 column to SHIFT+CTRL+V <br />
-Search for "Next track" and set it in Global 1 column to SHIFT+CTRL+B <br />
+Search for "Play/Pause" and set it in Global 1 column to CTRL+SHIFT+ALT+F2 <br />
+Search for "Previous track" and set it in Global 1 column to CTRL+SHIFT+ALT+F1 <br />
+Search for "Next track" and set it in Global 1 column to CTRL+SHIFT+ALT+F3 <br />
 <br />
 <br />
 <br />
