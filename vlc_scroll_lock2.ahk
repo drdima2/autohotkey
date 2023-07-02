@@ -119,8 +119,11 @@ $Esc::
 
 
 ;---------------- function key for date -------------
+;hourIL := A_Hour +8
 !d::
-    Send, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%{Space} ; press ALT+d
+    hourIL := ( (A_Hour) +8 )
+    Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space} ; press ALT+d
+    ;Send, %hourIL% ; press ALT+d
 
 
 
