@@ -122,7 +122,7 @@ $Esc::
 ;hourIL := A_Hour +8
 !d::
     hourIL := ( (A_Hour) +8 )
-    Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space} OUT CALL{Space} ; press ALT+d
+    Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space} DRDIMA - OUT CALL{Space} ; press ALT+d
     ;Send, %hourIL% ; press ALT+d
 
 
