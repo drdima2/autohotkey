@@ -121,10 +121,20 @@ $Esc::
 ;---------------- function key for date -------------
 ;hourIL := A_Hour +8
 !d::
-    hourIL := ( (A_Hour) +8 )
-    Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space} DRDIMA - OUT CALL{Space} ; press ALT+d
+    ; date time variables https://www.autohotkey.com/docs/v1/Variables.htm#NowUTC
+    ; //hourIL := ( (A_Hour) +8 )
+    ; //Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space} DRDIMA - OUT CALL{Space} ; press ALT+d
     ;Send, %hourIL% ; press ALT+d
 
+
+    CurrentDateTime := "" ; empty this variable (erase its content)
+    EnvAdd, CurrentDateTime, +8, hour
+    ; equivalent to:
+    ; CurrentDateTime += +8, HH
+    FormatTime, eight_hours_plus, %CurrentDateTime%, yyyy-MM-dd HH:mm
+    ; MsgBox, %eight_hours_plus%
+    ;SendInput %eight_hours_plus%{Space}
+    Send, %eight_hours_plus%{Space} DRDIMA - OUT CALL{Space} ; press ALT+d
 
 
 
