@@ -128,7 +128,7 @@ $Esc::
 
 
     CurrentDateTime := "" ; empty this variable (erase its content)
-    EnvAdd, CurrentDateTime, +8, hour
+    ; // add here 8 hours EnvAdd, CurrentDateTime, +8, hour
     ; equivalent to:
     ; CurrentDateTime += +8, HH
     FormatTime, eight_hours_plus, %CurrentDateTime%, yyyy-MM-dd HH:mm
