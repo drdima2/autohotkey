@@ -123,7 +123,7 @@ $Esc::
 !d::
     ; date time variables https://www.autohotkey.com/docs/v1/Variables.htm#NowUTC
     ; //hourIL := ( (A_Hour) +8 )
-    ; //Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space} DRDIMA - OUT CALL{Space} ; press ALT+d
+    ; //Send, %A_YYYY%-%A_MM%-%A_DD% %hourIL%:%A_Min%{Space}DRDIMA - OUT CALL{Space} ; press ALT+d
     ;Send, %hourIL% ; press ALT+d
 
 
