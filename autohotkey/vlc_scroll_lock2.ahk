@@ -134,7 +134,7 @@ $Esc::
     FormatTime, eight_hours_plus, %CurrentDateTime%, yyyy-MM-dd HH:mm
     ; MsgBox, %eight_hours_plus%
     ;SendInput %eight_hours_plus%{Space}
-    Send, %eight_hours_plus%{Space} DRDIMA - OUT CALL{Space} ; press ALT+d
+    Send, %eight_hours_plus%{Space}DRDIMA - OUT CALL{Space} ; press ALT+d
 
 
 
